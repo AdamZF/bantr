@@ -1,0 +1,2167 @@
+//General Objects (imgs/divs/building-blocks)
+//* Sass Mixins */
+@mixin bp-large
+  @media only screen and (max-width: 1200px)
+    @content
+
+@mixin bp-medium
+  @media only screen and (max-width: 900px)
+    @content
+
+@mixin bp-small
+  @media only screen and (max-width: 650px)
+    @content
+
+@mixin transition($property, $duration)
+  -webkit-transition: $property $duration
+  -moz-transition: $property $duration
+  -ms-transition: $property $duration
+  -o-transition: $property $duration
+  transition: $property $duration
+
+@mixin border-box
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+@mixin calc($property, $expression)
+  #{$property}: -moz-calc(#{$expression})
+  #{$property}: -webkit-calc(#{$expression})
+  #{$property}: calc(#{$expression})
+
+@mixin gradient($direction, $color1, $color2)
+  background: $color1
+  background: -webkit-linear-gradient($direction, $color1, $color2)
+  background: linear-gradient($direction, $color1, $color2)
+
+
+@mixin keyframes($animation-name)
+  @-webkit-keyframes #{$animation-name}
+    @content
+
+  @-moz-keyframes #{$animation-name}
+    @content
+
+  @-ms-keyframes #{$animation-name}
+    @content
+
+  @-o-keyframes #{$animation-name}
+    @content
+
+  @keyframes #{$animation-name}
+    @content
+
+@mixin animation($str)
+  -webkit-animation: #{$str}
+  -moz-animation: #{$str}
+  -ms-animation: #{$str}
+  -o-animation: #{$str}
+  animation: #{$str}
+
+
+//Body//
+body.settings
+  background: linear-gradient(to bottom, #41295a, #2F0743) 
+
+body.settings h1
+  margin-top: 50px
+/** Front Page specific **/
+
+.b-body-front::before
+  content: ""
+  height: 100vh
+  width: 100%
+  z-index: -100
+  position: fixed
+  top: 0px
+  left: 0px
+  background: linear-gradient(to right, #984fcf, #cc5f5f)
+
+body#search::before
+  content: ""
+  min-height: 100vh
+  width: 100%
+  z-index: -100
+  position: fixed
+  top: 0px
+  left: 0px
+  @include gradient(to top, #577eff, #8300b0)
+
+/* This section for tag css */
+button:hover
+  cursor: pointer
+p
+  word-wrap: break-word
+
+body
+  margin: 0px
+  width: 100%
+  float: left
+  min-height: 100vh
+/* ------------------------ */
+
+/* Responsive Images */
+.img-res
+  max-width: 100%
+
+//Search page specific//
+@include keyframes(search_blink)
+  0%
+    background: transparent
+    box-shadow: none
+  50%
+    background: transparent
+    box-shadow: none
+  50.1%
+    background: white
+    box-shadow: 1px 1px 4px black
+  99.9%
+    background: white
+    box-shadow: 1px 1px 4px black
+  100%
+    background: transparent
+    box-shadow: none
+
+
+.search-hero
+  font-size: 75px
+  margin-top: 50px
+  font-weight: 100
+  letter-spacing: 10px
+  text-shadow: 1px 1px 5px black
+
+.search-hero a
+  text-decoration: none
+  text-transform: uppercase
+  color: white
+
+.search-hero span
+  display: inline-block
+  width: 2px
+  position: absolute
+  margin-top: 5px
+  height: 75px
+  @include animation(search_blink 1.2s linear infinite)
+
+.search-form #query
+  padding: 10px
+  border-radius: 3px
+  box-sizing: border-box
+  width: 100%
+  margin-bottom: 10px
+  border: 1px solid #aaa
+
+.search-form .label
+  font-weight: bold
+  text-shadow: 1px 1px 4px black
+  color: white
+
+.search-form select, .search-form #block-name
+  padding: 5px
+  border-radius: 5px
+  border: 1px solid #999
+  max-width: 200px
+  width: 100%
+  box-sizing: border-box
+  color: #333
+
+
+#search-results
+  margin-top: 20px
+  padding: 15px
+  background-color: rgba(255,255,255,.8)
+
+.block-preview
+  color: #111
+  border-bottom: 1px solid #555
+  margin-bottom: 20px
+  padding-bottom: 20px
+
+.block-preview .subcount
+  float: right
+
+.block-description
+  margin-top: 10px
+  font-size: 18px
+  color: #111
+
+.block-preview a
+  color: #0023ff
+  text-decoration: none
+
+
+
+
+.search-form select option
+  padding: 10px
+  box-sizing: border-box
+
+.search-form button
+  box-sizing: border-box
+  width: 100%
+  max-width: 200px
+  padding: 5px
+  border: 1px solid #aaa
+  color: white
+  float: right
+  border-radius: 4px
+  background: #0b1749
+  @media only screen and (max-width: 600px)
+    max-width: 100%
+    margin-top: 10px
+    padding: 10px
+    margin-bottom: 20px
+
+/** lists **/ 
+.list-inline
+  display: inline
+
+/* for headers */
+.h-tspaced
+  margin-top: 20px
+
+.h-wide
+  letter-spacing: 3px
+
+.h-white
+  color: white
+
+.pg-heading
+  padding: 40px
+
+.pg-heading img
+  max-width: 100%
+
+.h-tshadowed
+  text-shadow: 1px 1px 4px black
+
+$card-blue : #182848
+
+.heading-blue
+  padding: 20px
+  margin: 0px
+  margin-bottom: 10px
+  background-color: #22224e
+  color: white
+
+.heading-blue a
+  color: aliceblue
+  text-decoration: none
+
+
+.none
+  font-weight: 200
+  color: #1a1a1a
+  margin-top: 20px
+
+
+/* body coloring */
+.full
+  min-height: 100vh
+
+.full-dark
+  color: #e8e8e8
+  background-color: #1b1b1b
+/* horizontal centering */
+.h-center
+  margin: 0px auto
+
+.fl-right
+  float: right
+
+.card
+  padding: 10px
+  font-weight: 100
+  
+.card-blue
+  background-color: $card-blue
+  color: white
+
+.card-blue a 
+  text-decoration: none 
+  color: aliceblue
+.card-green
+  background-color: #49b54c
+  color: white
+
+.fw-light
+  font-weight: 100
+
+.container
+  width: 100%
+  max-width: 960px
+  margin: 0px auto
+  @include border-box
+  padding: 10px
+
+.container-small
+  width: 100%
+  max-width: 300px
+  margin: 0px auto
+  @include border-box
+  padding: 10px
+
+.container-front
+  width: 100%
+  margin: 0px auto
+  @include border-box
+  margin-top: 100px
+
+.container img
+  max-width: 100%
+
+.container-full
+  width: 100%
+  position: relative
+  float: left
+
+.form-std input
+  margin-top: 5px
+  margin-bottom: 0px
+  padding: 5px 7px
+  border: 1px solid #999
+  width: 100%
+  @include border-box
+  max-width: 400px
+  border-radius: 3px
+
+.form-std fieldset
+  border: 1px solid #aaa
+  margin-top: 10px
+  border-radius: 5px
+  padding: 20px
+  padding-top: 10px
+  width: 100%
+  box-sizing: border-box
+
+.form-std h3
+  font-weight: 100
+
+.form-std .tip
+  margin-top: 3px
+  font-size: 12px
+
+.form-std textarea
+  min-height: 200px
+  line-height: 18px
+  font-size: 16px
+  width: 100%
+  max-width: 500px
+  @include border-box
+  margin-top: 5px
+  padding: 5px
+  resize: none
+  border-radius: 4px
+
+.form-std button
+  margin-top: 10px
+  padding: 10px 15px
+
+
+.form-remove textarea
+  @include border-box
+  width: 500px
+  max-width: 100%
+  border: 1px solid #d9d9d9
+  float: left
+  padding: 5x
+
+
+.form-remove button
+  float: left
+  margin-top: 20px
+  margin-right: 20px
+
+.mt-15
+  margin-top: 15px
+
+.mb-15
+  margin-bottom: 15px
+
+.select-wide
+  padding: 5px
+  max-width: 300px
+  width: 100%
+
+.a-std
+  text-decoration: none
+  color: #000999
+
+.a-std:hover
+  color: aqua
+.container-full-messages
+  display: block
+  margin: 0px auto
+  margin-top: 40px
+  padding: 10px
+
+.container-nav-fixed
+  width: 100%
+  margin-top: 60px
+
+.light
+  font-weight: 100
+
+.t-center
+  text-align: center
+
+.img-full
+  width: 100%
+  height: auto
+
+.btn_box
+  padding: 10px
+
+.btn
+  padding: 5px 15px
+  border-radius: none
+  text-decoration: none
+    
+.btn:hover
+  cursor: pointer
+
+.btn-blue
+  background-color: #1c3087
+  color: white
+  border: none
+
+.btn-green
+  background-color: #0dbd42
+  color: white
+  border: none
+
+.btn-pad-sm
+  padding: 5px 10px
+
+.btn-blue:hover
+  background-color: navy
+  cursor: pointer
+
+.btn-red
+  background-color: #ff2a2a
+  color: white
+  border: none
+
+.btn-red:hover
+  background-color: red
+  cursor: pointer
+
+.btn-msg
+  background-color: #1c3fff
+  color: white
+  border: none
+
+.btn-subscribe
+  margin-top: 10px
+  background-color: white
+  color: #278327
+  padding: 10px 15px
+  font-size: 15px
+  border: 1px solid #278327
+  transition: .4s
+
+.btn-subscribe:hover
+  color: white 
+  background: #278327
+
+.btn-unsubscribe
+  margin-top: 10px
+  background-color: white
+  color: darkred
+  padding: 10px 15px
+  font-size: 15px
+  border: 1px solid darkred
+  transition: .4s
+
+.btn-unsubscribe:hover
+  background: darkred
+  color: white
+
+.btn-msg:hover
+  background-color: #1c2eee
+  cursor: pointer
+
+.btn-form
+  margin-top: 15px
+
+.btn-submit-css
+  color: white
+  border: none
+  background-color: #1b1b1b
+
+.btn-submit-css:hover
+  color: orangered
+
+.btn-css-image
+  border-radius: 4px
+  padding: 5px 15px
+  background-color: #005d8d
+  color: white
+  border: none
+
+.btn-css-image:hover
+  background-color: #222b49
+
+.btn-video
+  float: left
+  padding: 5px 15px
+  border: none
+  margin-top: 15px
+  background: #e62828
+  color: white
+  border-radius: 3px
+
+
+.list-down
+  padding: 0px
+
+.list-down li
+  list-style: none
+  margin-bottom: 10px
+
+.form-text
+  padding: 5px
+  width: 100%
+  margin-top: 10px
+  margin-bottom: 10px
+  @include border-box
+
+
+.h-none
+  color: white
+  padding: 10px 15px
+  background-color: darkred
+
+
+.table-def
+  width: 100%
+  border-collapse: collapse
+
+.table-def select
+  padding: 5px 10px
+
+.table-def td, .table-def th
+  border: 1px solid #dddddd
+  text-align: left
+  padding: 5px
+
+.of-x
+  width: 100%
+  overflow-x: auto
+
+.mod-table
+  width: 100%
+  max-width: 100%
+  border-collapse: collapse
+  overflow-x: auto
+
+.mod-table th
+  text-align: left
+  height: 30px
+  padding: 5px
+  background-color: #4CAF50
+  color: white
+  font-weight: 100
+
+.mod-table td, .mod-table th
+  border: 1px solid #ddd
+  text-align: center
+
+.mod-table tr:nth-child(even)
+  background-color: #efefef
+
+.i-txt-def
+  padding: 5px
+  border: 1px solid #999
+
+//Notifications//
+.notify
+  color: orangered
+  font-weight: 700
+  text-decoration: none
+//Block Dividers --- Responsive Grid
+
+@for $i from 1 through 12
+  .bl-#{$i}
+    width: 100% / 12 * $i
+    float: left
+    @include border-box
+
+@include bp-large
+  .bl-lg-hide
+    display: none
+  @for $i from 1 through 12
+    .bl-lg-#{$i}
+      width: 100% / 12 * $i
+      float: left
+      @include border-box
+
+@include bp-medium
+  .bl-md-hide
+    display: none
+  @for $i from 1 through 12
+    .bl-md-#{$i}
+      width: 100% / 12 * $i
+      float: left
+      @include border-box
+
+@include bp-small
+  .bl-sm-hide
+    display: none
+  @for $i from 1 through 12
+    .bl-sm-#{$i}
+      width: 100% / 12 * $i
+      float: left
+      @include border-box
+
+
+
+@for $i from 1 through 12
+  .bo-#{$i}
+    width: 100% / 12 * $i - 1%
+    margin: .5%
+    float: left
+    @include border-box
+
+@include bp-large
+  .bo-lg-hide
+    display: none
+  @for $i from 1 through 12
+    .bo-lg-#{$i}
+      width: 100% / 12 * $i - 1%
+      margin: .5%
+      float: left
+      @include border-box
+
+@include bp-medium
+  .bo-md-hide
+    display: none
+  @for $i from 1 through 12
+    .bo-md-#{$i}
+      width: 100% / 12 * $i - 1%
+      margin: .5%
+      float: left
+      @include border-box
+
+@include bp-small
+  .bo-sm-hide
+    display: none
+  @for $i from 1 through 12
+    .bo-sm-#{$i}
+      width: 100% / 12 * $i - 1%
+      margin: .5%
+      float: left
+      @include border-box
+
+
+//Navigation
+$nav_primary :  black
+$nav_secondary : #2a3e87
+$nav_text : white
+$hover_a : #13266d
+
+.nav-logo
+  height: 50px
+  float: left
+  width: auto
+
+.nav-default
+  height: 50px
+  width: 100%
+  background-color: $nav_primary
+  border-bottom: 1px groove #d6d6d6
+
+.nav-small ul
+  background-color: $nav_primary
+
+.nav-small ul li
+  margin-bottom: 7px
+
+.nav-right
+  width: calc(100% - 150px)
+  float: left
+  box-sizing: border-box
+.nav-fixed
+  position: fixed
+  top: 0px
+
+.nav-under-block-menu
+  top: 18px
+
+.nav-default-right
+  float: right
+  margin: 0px
+  padding: 0px
+
+.nav-default-right li
+  margin-top: 7px
+  float: left
+  list-style: none
+  display: inline
+
+.nav-default-right li a
+  padding: 7px 15px
+  color: $nav_text
+  text-decoration: none
+
+.nav-default-right li a:hover
+  color: $nav_text
+  background-color: $hover_a
+
+.nav-right-avatar
+  margin-top: 0px !important
+
+.nav-right-avatar img
+  height: 50px
+  float: right
+  width: 50px
+
+.nav-right-dropdown a img
+  width: 50px
+  height: 50px
+  float: right
+
+.nav-right-dropdown ul
+  padding: 0px
+  display: none
+  margin-top: 5px
+  background-color: $nav_secondary
+  position: absolute
+  text-align: center
+  z-index: 1
+  right: 0px
+
+.nav-right-dropdown:hover ul
+  display: block
+
+.nav-right-dropdown ul li
+  width: 100%
+  display: block
+  margin-top: 0px !important
+
+.nav-right-dropdown ul li a
+  display: block
+
+//Button Styling
+.btn-submit-def
+  float: right
+  background-color: rgba(0,0,0,.5)
+  border: 1px groove white
+  color: #efefef
+
+.btn-preview
+  background-color: rgba(0,0,0,.5)
+  border: 1px groove white
+  color: #efefef
+
+.btn-media
+  background-color: rgba(0,0,0,.5)
+  border: 1px groove white
+  color: #efefef
+
+.btn-submit-def:hover,.btn-preview:hover,.btn-media:hover
+  background-color: rgba(255,255,255,.15)
+  cursor: pointer
+  color: white
+
+.btn-media-selected
+  background-color: #333
+  color: white
+
+.btn-login,.btn-register
+  margin-top: 20px
+  background-color: #444
+  border: 1px solid black
+  padding: 5px 20px
+  color: #d9d9d9
+
+
+
+.btn-login:hover,.btn-register:hover
+
+//Login Page//
+.login
+  margin: 0px auto
+  max-width: 650px
+  padding: 25px
+  @include border-box
+  background-color: rgba(0,0,0,.3)
+  border-radius: 15px
+  box-shadow: 0px 5px 5px 1px black
+  border: 1px solid #555
+
+.login a
+  color: #c41fcb
+  text-decoration: none
+//General Settings Screensizes
+@media screen and (max-width: 980px)
+  .container
+    width: 100%
+
+@media screen and (max-width: 650px)
+  .nav-logo
+    display: none
+  .nav-right
+    width: 100%
+
+@media screen and (max-width: 400px)
+  .nav-right-avatar
+    display: none !important
+
+//Global Font Setting
+body,button,input,textarea
+  font-family: 'Arial', sans-serif
+
+
+
+//Font Sizing Classes
+.fs-16
+  font-size: 16px
+
+.fs-18
+  font-size: 18px
+
+//Specific Body Backgrounds/Colors
+#body_home
+  background-color: #1a1a23
+  color: #e8e8e8
+
+#feed_home
+  background-color: #252238
+
+#messages_body
+  background-color: #e9e9e9
+
+//Lists
+
+.ul-login
+  list-style: none
+  padding: 0px
+  margin-top: 30px
+
+.ul-login li
+  margin-bottom: 20px
+
+//Inputs
+.input-def
+  padding: 5px
+
+.input-login
+  margin: 0px auto
+  margin-top: 10px
+  padding: 7px
+  font-size: 14px
+  border-radius: 5px
+  @include border-box
+  width: 100%
+  display: block
+  border: 1px solid #e9e9e9
+
+
+/* Writing A New Post */
+.txt-area-post
+  width: 100%
+  @include border-box
+  min-height: 64px
+  overflow-y: auto
+  resize: none
+  padding: 5px
+  line-height: 20px
+  font-size: 16px
+  margin-bottom: 10px
+  font-family: 'Arial', sans-serif
+
+.txt-area-msg
+  width: 100%
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  min-height: 64px
+  overflow-y: auto
+  resize: none
+  padding: 5px
+  line-height: 20px
+  font-size: 16px
+  margin-top: 10px
+  margin-bottom: 10px
+  font-family: 'Arial', sans-serif
+
+.txt-area-css
+  width: 100%
+  padding: 4px
+  height: 500px
+  border-radius: 4px
+  font-size: 16px
+  font-family: monospace
+  line-height: 25px
+  padding: 2px 10px
+  box-sizing: border-box
+  border: solid 1px #444
+  resize: none
+  background-color: #3c4e4e
+  color: skyblue
+  overflow: auto
+
+.txt-area-comment
+  width: 100%
+  @include border-box
+  padding: 3px
+  resize: none
+  min-height: 64px
+  overflow: auto
+  margin-bottom: 10px
+
+.container-write
+  background-color: #1a1a23
+  padding: 10px
+  margin-bottom: 20px
+
+//Media Upload Classes + Ids
+.media-box
+  width: 100%
+  position: relative
+  margin-top: 15px
+
+  input[type=file]
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    opacity: 0
+    cursor: pointer
+
+.media-drop-box
+  width: 100%
+  padding-top: 30px
+  padding-bottom: 30px
+  background: rgba(255, 255, 255, 0.2)
+  border: 2px dashed rgba(255, 255, 255, 0.2)
+  text-align: center
+  transition: background 0.3s ease-in-out
+
+#post-media-preview
+  margin-top: 20px
+
+//Posts
+.container-post
+  background-color: white
+
+.post-head
+  padding: 10px
+  font-size: 18px
+  height: 50px
+
+.post-avatar
+  margin-right: 10px
+  height: 50px
+  width: auto
+  float: left
+
+.container-media-in
+  color: white
+
+
+/* ---- Messaging -----*/
+
+$msg_nav_primary: #1c3087
+$msg_nav_text : white
+$msg_nav_hover_a : white
+$msg_nav_hover_a_txt : #333
+$msg_dropdown : #6699ff
+$msg_menu_bg : #2859ff
+
+.nav-messages
+  height: 50px
+  width: 100%
+  background: $msg_nav_primary
+  border-bottom: 1px groove #d6d6d6
+  box-shadow: none
+
+.nav-messages li a:hover
+  background-color: $msg_nav_hover_a
+  color: $msg_nav_hover_a_txt
+
+.msg-dropdown li a
+  background-color: $msg_dropdown
+
+
+.msg-menu
+  padding: 0px
+  margin: 0px
+
+.msg-menu li
+  list-style: none
+
+.msg-menu li a
+  display: block
+  padding: 20px 15px
+  background: $msg_menu_bg
+  color: white
+  text-decoration: none
+
+.msg-menu li a:hover
+  background: #2f4bc3
+
+#msg-menu-tog
+  float: left
+  display: none
+  padding: 15px 20px
+  color: white
+  @include bp-medium
+    display: block
+
+#msg-menu-tog:hover
+  cursor: pointer
+  background-color: $msg_nav_hover_a
+  color: $msg_nav_hover_a_txt
+
+#conversation_wrapper
+  width: 100%
+  float: left
+  position: absolute
+  height: calc(100% - 50px)
+  top: 50px
+
+#conversation_wrapper #msg_right
+  height: 100%
+
+#conversation_new_msg
+  position: absolute
+  bottom: 0px
+  width: 100%
+  @include border-box
+  height: 150px
+  left: 0px
+
+.msg-menu-hd
+  margin: 0px
+  padding-top: 20px
+  padding-bottom: 20px
+  background-color: $msg_menu_bg
+  border-bottom: 1px groove #e8e8e8
+  color: white
+
+.msg-menu-hd a
+  color: white
+  text-decoration: none
+
+.message-menu-left
+  @include bp-medium
+    position: absolute
+    z-index: 4
+
+.msg_table
+  border-collapse: collapse
+  width: 100%
+
+.msg_table th, td
+  padding: 15px
+  text-align: left
+  border-bottom: 1px solid #ddd
+
+.msg_table tr
+  background-color: white
+
+.msg_table tr.new
+  background-color: orange
+
+.msg_table tr:hover,.msg_table tr.new:hover
+  background-color: aliceblue
+  color: $msg_nav_primary
+  cursor: pointer
+
+.msg-compose
+  padding: 10px
+  @include border-box
+.msg-compose input
+  width: 100%
+  max-width: 800px
+  margin-bottom: 10px
+  @include border-box
+  padding: 5px
+  border: 1px solid #999
+
+.msg-compose textarea
+  resize: none
+  width: 100%
+  max-width: 800px
+  height: 25vh
+  @include border-box
+  margin-bottom: 10px
+
+.convo-leave
+  height: 30px
+
+.convo-leave li
+  display: inline
+  float: left
+  margin-right: 10px
+
+#convo_box
+  padding: 10px
+  height: 100%
+  @include border-box
+
+.convo_msg
+  padding: 10px
+  margin-bottom: 5px
+  border-bottom: 1px solid #aabaff
+  background-color: white
+  color: #111
+
+.convo_msg p
+  margin: 0px
+
+.convo_status
+  color: #999
+  padding-right: 10px
+
+.msg_author
+  margin-bottom: 5px
+
+.msg_author a
+  color: #111
+  font-weight: bold
+  text-decoration: none
+
+.msg_author a:hover
+  color: $msg_menu_bg
+
+/* msg searching and sorting */
+.msg_ss
+  padding: 15px
+  background-color: #777
+
+.msg_ss input
+  padding: 10px
+
+.msg_ss button
+  background-color: #555
+  color: white
+  border: none
+
+.msg_ss button:hover
+  cursor: pointer
+  background-color: #667
+
+.msg_store
+  overflow-y: auto
+  height: calc(100% - 225px)
+
+//blocks
+$b_default_ul : transparent
+
+.block-menu
+  position: relative
+  width: 100%
+  overflow: hidden
+  background-color: $nav_primary
+  border-bottom: 1px groove #9a9a9a
+  color: white
+  top: 0px
+
+.block-menu-fixed
+  position: fixed
+
+.sublist
+  padding-left: 5px
+  padding: 2px
+  font-size: 12px
+  text-transform: uppercase
+  letter-spacing: .7px
+  overflow: hidden
+  font-weight: 100
+  font-weight: bold
+  max-width: 99%
+
+
+.sublist li
+  list-style: none
+  display: inline
+
+.sublist li:after
+  content: " - "
+
+.sublist li a
+  color: white
+  text-decoration: none
+
+.sublist li a:hover
+  text-decoration: none
+
+
+.b-body-default
+  background-color: #d7d7d7
+
+.b-head
+  width: 100%
+  height: 150px
+  position: relative
+  @include gradient(to left, #cc5f5f, #984fcf)
+
+.b-banner
+  background-size: cover
+  height: 300px
+
+.b-logo
+  margin: 0px auto
+  max-height: 100%
+  width: auto
+  display: block
+
+.b-sort-ul .sorted_by a
+  color: orangered
+
+.b-name
+  position: absolute
+  left: 20px
+  bottom: 50px
+  font-size: 24px
+  text-decoration: none
+  color: white
+  font-weight: 100
+  letter-spacing: 1px
+  text-shadow: 1px 1px 3px #1b1b1b
+
+
+.front-name
+  position: absolute
+  left: 50%
+  margin-left: -125px
+  font-size: 40px
+  top: 5px
+  text-decoration: none
+  color: white
+  font-weight: 900
+  letter-spacing: 5px
+  text-transform: uppercase
+  text-shadow: 1px 1px 4px black
+
+.front-nav
+  width: 100%
+  display: block 
+  background: transparent
+  float: left
+  @include border-box 
+
+.front-nav .front-sort-ul
+  display: block 
+  float: left
+
+.front-side
+  float: right !important
+  border-left: none !important
+  @include bp-small 
+    z-index: 5
+.front-side::-webkit-scrollbar-track
+  border-radius: 10px
+  background-color: #F5F5F5
+
+
+.front-side::-webkit-scrollbar
+  width: 12px
+  background-color: #F5F5F5
+
+.front-side::-webkit-scrollbar-thumb
+  border-radius: 10px
+  background-color: #555
+
+.search-side
+  margin-bottom: 10px
+
+.search-side input
+  padding: 7px
+  box-sizing: border-box
+  border-radius: 3px
+  width: calc(100% - 50px)
+  border: 1px solid #bbb
+
+.search-side button
+  padding: 7px 10px
+  background-color: #0c1750
+  color: white
+  border: none
+  border-radius: 3px
+
+.front-side .b-sidebar
+  border: none
+
+.front-side h1, .front-side h2,
+  text-align: left
+  margin: 0px
+  padding: 5px
+
+
+.front-side p
+  margin: 0px
+  margin-bottom: 10px
+
+
+.front-side ul
+  list-style: none
+  padding-left: 0px
+  padding: 10px
+  margin-left: -10px
+  margin-right: -10px
+  border-bottom: 1px dashed #bbb
+
+.front-side ul li a
+  display: block
+  color: #00000b
+  text-decoration: none
+  padding-top: 5px
+  padding-bottom: 5px
+
+.front-sort-ul
+  padding: 0px
+  margin: 0px
+  overflow: hidden
+  background-color: rgba(0,0,0,.7)
+
+
+.b-sort-active
+  background-color: #1b1b1b
+  color: white
+
+.b-sort-ul li
+  list-style: none
+  display: blockul
+  float: left
+
+.front-sort-ul
+  margin-left: 10px
+
+.notify , .nav-default-right li a.notify 
+  box-shadow: inset 0px 0px 35px orangered
+
+.front-sort-ul li
+  list-style: none
+  display: block
+  float: left
+
+.sorted_by a
+  color: orangered 
+
+.front-sort-ul li a
+  padding: 10px 15px
+  transition: .2s
+  transition: .2s
+  text-transform: uppercase
+  background-color: transparent
+  margin: 0px
+  color: white
+  text-decoration: none
+  display: block
+  font-weight: 400
+  letter-spacing: 1px
+
+.front-sort-ul .sorted_by a 
+  color: orangered 
+
+.front-content
+  border: 1px solid #aaa
+  border-top: none
+
+.front-sort-ul li a:hover
+  cursor: pointer
+  color: white
+  background-color: #1b1b1b
+  text-shadow: none
+
+.b-nav
+  position: absolute
+  bottom: 0px
+  background-color: rgba(0,0,0,.75)
+  margin-left: 10px
+  width: auto
+
+.b-sort-ul
+  padding: 0px
+
+.b-sort-ul li a
+  padding: 10px 15px
+  background-color: $b_default_ul
+  margin: 0px
+  color: black
+  text-decoration: none
+  display: block
+  font-weight: 400
+  text-transform: uppercase
+  color: white 
+  letter-spacing: 1px
+
+.b-sort-ul li a:hover
+  cursor: pointer
+  color: white
+  background-color: #1b1b1b
+  text-shadow: none
+
+.b-content
+  @include border-box
+
+.toggle-sidebar
+  display: none
+  width: 100%
+  padding: 15px
+  font-size: 20px
+  color: white
+  background: #1b1b1b
+  border: none
+  @include bp-small
+    display: block
+
+.b-sidebar .toggle-sidebar
+  margin-bottom: 10px
+  padding: 10px
+.b-sidebar
+  padding: 10px
+  @include border-box
+  background-color: white
+  border-left: 1px solid #999
+  @include bp-small
+    position: absolute
+
+.login-sidebar
+  width: 100%
+  @include border-box
+  padding: 10px
+  border: 1px solid #777
+  background-color: #efefef
+  margin-bottom: 10px
+
+.login-sidebar input
+  width: 100%
+  padding: 5px
+  @include border-box
+  border: 1px solid #888
+  margin-bottom: 5px
+
+.login-sidebar .btn
+  max-width: 50px
+  border-radius: 5px
+
+.b-sidebar-moderation
+  margin-top: 20px
+  border: 1px solid #1b1b1b
+  background-color: aliceblue
+  padding: 0px
+  border-radius: 5px
+  color: black
+
+.b-sidebar-moderation h4
+  color: white
+  background: #2d2274
+  font-weight: 100
+  padding: 10px
+
+.b-sidebar-moderation ul
+  padding: 10px
+  @include border-box
+
+.b-sidebar-moderation ul li
+  list-style: none
+  margin: 5px
+
+
+.b-sidebar-moderation ul li a
+  color: #333
+  text-decoration: none
+  margin: 5px
+
+
+.b-sidebar-moderation ul li a:hover
+  text-decoration: underline
+
+
+.b-side-search
+  @include border-box
+  padding: 10px
+  border: 1px solid #999
+  width: 100%
+  width: calc(100% - 50px)
+
+button.side-search
+  float: right
+  padding: 10px 15px
+  border-radius: 4px
+
+.block-search
+  margin-bottom: 10px
+
+#limit-search
+  padding: 10px
+  @include border-box
+  border: 1px solid #999
+  border-top: none
+  background-color: aliceblue
+
+
+.bp-preview
+  padding: 10px
+  width: 100%
+  @include border-box
+  background-color: white
+  border-bottom: 1px solid #a9a9a9
+  overflow: auto
+
+
+.bp-self-preview.post_loaded
+  background-color: #fbfbfb
+  padding: 10px
+  margin-top: 5px
+  margin-left: 120px
+  border: 1px solid #acacac
+  color: #222
+  float: left
+  width: calc(100% - 120px)
+  @include border-box
+
+.bp-self-preview.post_loaded p, h1, h2, h3, h4, h5, ul
+  margin: 0px
+
+.bp-self-display
+  padding-left: 140px
+  margin-top: 10px
+
+.bp-vote
+  padding: 5px
+  background-color: transparent
+  border: none
+
+.bp-score
+  @include border-box
+  overflow: hidden
+  float: left
+  border-right: 1px solid grey 
+  margin-right: 10px
+
+.comment .bp-score
+  display: block 
+  width: 50px
+  margin: 0px
+  position: absolute
+ 
+.comment-action-wrapper .bp-reports
+  margin-top: 10px 
+
+.comment-wrapper.tier-1
+  border: 1px solid #aaa 
+
+.comment-wrapper .bp-score
+  border: none
+
+.comment.permalinked 
+  padding: 10px 
+  background: #e0f0ff
+
+.comment-reporter 
+  padding: 10px 
+  border: 1px solid #aaa
+  margin-top: 10px 
+  background: aliceblue
+
+.ban-user
+  float: left
+  background: aliceblue
+  border: 1px solid #aaa
+  width: 100% 
+  box-sizing: border-box
+  padding: 15px
+
+.comment-remove
+  float: left
+  width: 100%
+  background: aliceblue
+  border: 1px solid #aaa
+  padding: 10px
+  margin-top: 15px
+  @include border-box 
+
+.bp-score ul
+  float: left
+  padding: 0px
+  min-width: 45px
+
+.bp-score ul li
+  list-style: none
+  text-align: center 
+ 
+.bp-preview-score
+  padding: 5px
+  font-family: Arial, sans-serif
+
+.bp-vote:hover
+  cursor: pointer
+
+.bp-vote-up
+  color: #999
+
+.bp-upvoted, .comment-upvoted
+  color: orangered
+
+.bp-downvoted, .comment-downvoted
+  color: #000066
+
+.bp-action-list
+  padding: 0px
+  overflow: hidden
+  margin-top: 15px
+  position: relative
+  float: left
+
+
+.bp-action-list li
+  display: inline
+
+.bp-action-list li a
+  margin-left: 10px
+  float: left
+  color: #1b1b1b
+  display: block
+  font-size: 13px
+  margin-right: 10px
+  font-weight: bold
+  border: 1px solid #bebebe
+  padding: 5px 10px
+  text-decoration: none
+
+
+$remove: red
+$cherry-palette-1: #14ff53
+$approve: #14ff53
+$approve: #14ff53
+$delete: black
+$comment: #1c1ab5
+$report: orangered
+
+
+.bp-action-list li a.action-cherry
+  color: maroon
+
+.bp-action-list li a:hover
+  cursor: pointer
+  text-decoration: none
+  color: white
+  background-color: #1b1b1b
+  border-color: #1b1b1b
+
+.bp-action-list li a.action-cherry:hover
+  color: white
+  background-color: maroon
+
+.bp-reports 
+  padding: 10px 
+  background: aliceblue
+  color: black
+  border: 1px solid #bbb
+  display: none
+
+.bp-action-wrapper
+  float: left
+  width: 100%
+  @include border-box
+  padding-left: 120px
+
+@include bp-small
+  .bp-action-wrapper
+    padding: 5px
+
+  .bp-action-list li a
+    margin-top: 10px
+
+.bp-action-wrapper div
+  margin-top: 10px
+
+.bp-action-delete
+  margin-left: 20px
+
+.bp-thumb
+  display: block
+  height: auto
+  width: 80px
+  padding: 10px
+  float: left
+  @include border-box
+
+.bp-thumb img
+  width: 100%
+  height: 100%
+
+.bp-title a
+  text-decoration: none
+  color: #254d83
+  font-weight: bold
+  font-size: 18px
+
+.bp-title a:visted
+  color: purple
+
+.bp-title a:hover
+  text-decoration: underline
+
+.bp-domain
+  font-size: 12px
+
+.bp-author
+  color: #333
+  font-size: 12px
+  margin-top: 5px
+
+.bp-author a
+  color: #1b1b1b
+  text-decoration: none
+
+.btn-expand-sp
+  padding: 4px 7px
+  background-color: white
+  border: 1px solid #999
+  color: #333
+  margin-top: 10px
+  float: left
+
+.b-submit
+  display: block
+  padding: 10px
+  text-align: center
+  color: white
+  text-decoration: none
+  margin-bottom: 5px
+
+.b-btn-submit
+  width: 100%
+  padding: 10px
+  border: none
+  text-decoration: none
+  background-color: white
+  color: #1c3087
+  border: 1px solid #1c3087
+  display: block
+  text-align: center
+  font-weight: 600
+  margin-bottom: 10px
+  font-size: 18px
+  @include border-box
+
+.b-btn-submit:hover
+  background-color: #12215b
+  color: white
+//Block Post Previews
+.rendertext
+  padding: 10px
+  background-color: #efefef
+  border: 1px solid #bebebe
+  margin-top: 20px
+  border-radius: 5px
+
+//Block Post Editing 
+.form-update
+  display: block 
+  margin-top: 15px
+  float: left
+  width: calc(100% - 120px) 
+  margin-left: 120px 
+
+.form-update textarea
+  width: 100% 
+  min-height: 150px 
+  padding: 5px 
+  box-sizing: border-box 
+  resize: none
+  margin-bottom: 10px
+
+.post-edit-preview 
+  display: block 
+  float: left
+  width: calc(100% - 120px) 
+  margin-left: 120px 
+  box-sizing: border-box
+  padding: 10px 
+  background: aliceblue
+  border: 1px solid #111
+  margin-top: 15px
+  display: none
+//Block Comments//
+.preview-reply
+  padding: 5px
+  border: 1px solid #999
+  background-color: white
+  margin-top: 10px
+  padding-left: 20px
+  padding-right: 20px
+  display: none
+
+.comment-time 
+  font-size: 13px
+  color: #333
+  
+.comment-author
+  text-decoration: none 
+  color: #254d83
+  font-weight: bold
+  font-size: 13px
+
+form.new-comment .preview-text, .preview-text
+  padding: 10px 
+  width: 100%
+  background: aliceblue
+  border: 1px solid #bbb
+  @include border-box 
+  display: none 
+  margin-top: 20px 
+
+form.new-comment
+  margin-top: 10px
+  width: 100%
+  box-sizing: border-box
+  padding: 10px 
+  background: white
+  border: 1px solid #aaa
+  border-right: none
+
+form.new-comment button 
+  margin-top: 10px 
+  
+form.new-comment textarea 
+  width: 100%
+  @include border-box
+  padding: 10px 
+  border: 1px solid #aaa
+  min-height: 100px
+  resize: none 
+
+form.comment-reply textarea
+  width: 100%
+  @include border-box
+  padding: 5px
+  resize: none
+
+form.comment-reply button
+  margin-top: 10px
+
+.comment-wrapper
+  padding: 10px
+  width: 98%
+  padding-bottom: 0px 
+  margin-left: 1%
+  @include border-box
+  margin-bottom: 5px
+  margin-top: 10px
+  background-color: white
+  float: left
+
+.comment-main 
+  margin-left: 50px 
+
+.comment-text 
+  padding: 10px 
+  padding-left: 0px
+
+.comment-text p 
+  margin: 0px 
+  
+.comment-wrapper.tier-1
+  padding-bottom: 10px 
+  border: 1px solid #aaa
+  border-radius: 3px
+
+
+.comment-list
+  padding: 0px
+
+.comment-list li
+  list-style: none
+  display: inline
+  margin-right: 15px
+
+.comment-list li a
+  font-size: 12px
+  font-weight: bold
+  color: #444
+
+.comment-list li a:hover
+  cursor: pointer
+//Block post non preview//
+.block-post-wrapper
+  padding: 20px
+  background-color: #efefef
+  border: 1px solid #d9d9d9
+  border-right: none
+  @include bp-small
+    padding: 5px
+
+.block-post-ua-wrapper
+  margin-top: 5px
+  padding: 10px
+  @include border-box
+//Moderation and sub editing Sass//
+.sidebar-uncompiled
+
+.textarea-sidebar-edit
+  resize: none
+  min-height: 400px
+  width: 100%
+  @include border-box
+  padding: 10px
+
+.sidebar-compiled
+  padding: 10px
+  border: 1px groove #1b1b1b
+  background-color: #efefef
+
+//Block Actions
+.bl-action-list-1
+  width: auto
+  padding-left: 0px
+  white-space: nowrap
+
+.bl-action-list-1 li
+  display: inline-block
+  list-style: none
+  margin: 0px
+
+.bl-action-list-1 li a
+  padding: 10px
+
+.bl-action-update
+  background-color: #00ffb9
+  color: black
+  font-weight: bold
+  margin: 0px
+  border: 1px groove #1b1b1b
+  border-radius: 5px
+  padding: 10px
+
+
+.bl-action-update:hover
+  background-color: #1b1b1b
+  color: white
+  cursor: pointer
+
+.bl-action-preview
+  background-color: white
+  border: 1px solid #999
+  color: black
+  font-weight: bold
+  margin: 0px
+  border-radius: 5px
+
+
+.bl-action-preview:hover
+  background-color: #333
+  color: white
+  cursor: pointer
+
+.txt-title
+  width: 100%
+  margin-top: 20px
+  padding: 10px
+  border: 1px solid #1b1b1b
+  @include border-box
+  border-radius: 5px
+
+
+.txt-area-block-post
+  width: 100%
+  @include border-box
+  padding: 10px
+  min-height: 300px
+  border-radius: 5px
+  border: 1px solid #1b1b1b
+  margin-top: 20px
+  line-height: 1.3em
+
+//Moderation//
+.mod-invite
+  padding: 10px
+  background: aliceblue
+  color: black
+  box-sizing: border-box
+  border: 1px solid #888
+  margin-bottom: 20px
+
+.mod-invite h3
+  font-weight: 200
+
+.mod-invite ul
+  list-style: none
+  padding: 0px
+  display: block
+  height: 25px
+  margin-top: 10px
+
+.mod-invite ul li
+  display: inline-block
+  float: left
+  margin-right: 10px
+
+.css-image
+  float: left
+  @include border-box
+  display: block
+  width: 25%
+  padding: 10px
+  @include bp-large
+    width: 25%
+  @include bp-medium
+    width: 50%
+  @include bp-small
+    text-align: center
+    width: 100%
+
+.css-image p
+  margin-top: 5px
+  margin-bottom: 5px
+  font-weight: bold
+
+
+//Submissions CSS //
+.block-submit
+  padding: 10px 15px
+  color: #e9e9e9
+  background-color: #1b1b1b
+  border: none
+  border-radius: 10px
+
+.block-submit:hover
+  cursor: pointer
+  background-color: #333
+
+form.block-post-form input
+  border-radius: 5px
+  border: 1px solid #888
+  margin-bottom: 10px
+  margin-top: 10px
+  padding: 10px
+  max-width: 500px
+  width: 100%
+  @include border-box
+
+
+//Cherry related CSS//
+.bp-action-list .give-cherry
+  background-color: #da1f1f
+  color: white
+  margin-top: 5px
+  margin-left: 20px
+  padding: 6px
+  border: 1px solid
+  border-color: inherit
+  text-decoration: none
+
+
+//Profiles//
+.profile-bio
+  padding: 10px
+  color: #1b1b1b
+  border-top: 1px dashed #999
+  border-bottom: 1px dashed #999
+  margin-top: 10px
+  margin-bottom: 10px
+
+.profile-bio p
+  margin: 0px
+
+#profile-edit-bio
+  color: orangered
+
+#profile-edit-bio:hover
+  cursor: pointer
+
+.profile-mod-tab
+  padding: 10px
+  padding-top: 0px
+
+.profile-mod-tab ul
+  padding: 20px
+  list-style: circle
+  box-sizing: border-box
+  display: block
+  width: 100%
+  border: 1px solid #3a3399
+  background: aliceblue
+
+.profile-mod-tab ul li
+  margin-left: 15px
+//Pagination CSS//
+.pagination
+  margin-top: 10px
+
+.pagination li
+  display: inline
+
+.pagination li a
+  color: white
+  background-color: #0071ff
+  text-decoration: none
+  border-radius: 0px
+  border: none
+  padding: 5px 15px
+  margin-left: 5px
+  margin-right: 5px
+
+.pagination li span
+  background-color: #ddd
+  color: #1b1b1b
+  padding: 5px 15px
+  border: 1px solid #1b1b1b
+
+//Ban css
+
+.form-ban
+  margin-top: 20px
+
+.form-ban textarea
+  min-height: 50px
+  padding: 5px
+  @include border-box
+  width: 100%
+  resize: none
+
+
+.form-ban input
+  width: 100%
+  border: 1px solid #777
+  padding: 5px
+  border-radius: 3px
+  max-width: 250px
+  @include border-box
+
+
+.form-ban button
+  padding: 5px 10px
+  margin-top: 10px
+
+//Profile PAge
+.link-more
+  float: left
+  display: block
+  margin: 10px
+  text-decoration: none
+  margin-top: 20px
+  background: black
+  color: white
+  letter-spacing: 1px
+  font-weight: 500
+  padding: 10px 15px
+  border: none
+  border-radius: 5px
+// Errors
+
+.error-message
+  color: #bb0000
+
+//queue
+.modqueue 
+  padding: 10px 
+  
+.modqueue .comment-wrapper
+  width: 100%
+  margin: 0px 
+
+.modqueue .comment-wrapper, .modqueue .bp-preview
+  margin-bottom: 5px
+  margin-top: 5px 
+  border: 1px solid #111

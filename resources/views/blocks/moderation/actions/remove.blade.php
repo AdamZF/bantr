@@ -1,0 +1,32 @@
+@if(isset($mod))
+  @if($mod->perms_posts === 1)
+  <div class="container-full">
+    <div id="bp-remove-{{$post->id}}" class="bp-action-report" style="display: none">
+      <h4>Why are you removing this post?</h4>
+      <div id="remove-wrap-{{$post->id}}">
+      <form class="form-remove" onsubmit="sendform('mod/removepost', this, 'bp-remove-{{$post->id}}', 'remove-wrap-{{$post->id}}')">
+        {!! csrf_field() !!}
+
+        <input type="hidden" name="block" value="{{$post->block_id}}">
+        <input type="hidden" name="pid" value="{{$post->id}}">
+      <select name="reason">
+        <option default>Select a Reason</option>
+        <option value="wrongblock">Content not suitable for this block</option>
+        <option value="blockrules">Breaking block rules</option>
+        <option value="siterules">Breaking site-wide rules</option>
+        <option value="nsfw">NSFW Content</option>
+        <option value="other">Other (see: comment)</option>
+      </select> <br><br>
+      <h4>Additional Comments</h4>
+      <div class="container-full">
+        <textarea name="mod-comment" placeholder="Comment"></textarea>
+      </div>
+      <button class="btn btn-blue" type="submit">Submit</button>
+      <button class="btn btn-red" onclick="hide('bp-remove-{{$post->id}}')" type="button">Cancel</button>
+    </form>
+    </div>
+  </div>
+</div>
+  @endif
+@endif
+

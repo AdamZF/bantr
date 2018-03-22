@@ -1,0 +1,64 @@
+{
+  "subreddits" : {
+    "betterautomoddev" : {
+    "name" : "betterautomoddev",
+    "comment_rules" : {
+      "banned_words" : ["test"],
+      "minimum_karma" : 0,
+      "minimum_age" : 1
+    },
+
+    "general_submission_rules" : {
+      "banned_words" : ["Ree"],
+      "minimum_age" : 1,
+      "minimum_karma" : 0
+    },
+
+    "link_submission_rules" : {
+      "banned_domains" : ["i.reddit.com"],
+      "archive_domains" : ["huffingtonpost.com"],
+      "banned_words" : ["SHARE"],
+      "minimum_karma" : 0,
+      "minimum_age" : 1
+    },
+
+    "self_submission_rules" : {
+      "banned_words_title" : ["nice"],
+      "banned_words_body" : ["nice"],
+      "minimum_karma" : 0,
+      "minimum_age" : 1
+    }
+  },
+
+  "The_Donald" : {
+  "name" : "The_Donald",
+  "comment_rules" : {
+    "banned_words" : ["trump", "Trump", "Clinton", "and", "the", "an"],
+    "minimum_karma" : 0,
+    "minimum_age" : 1
+  },
+
+  "general_submission_rules" : {
+    "banned_words" : ["trump", "Trump"],
+    "minimum_age" : 1,
+    "minimum_karma" : 0
+  },
+
+  "link_submission_rules" : {
+    "banned_domains" : ["i.reddit.com"],
+    "archive_domains" : [],
+    "banned_words" : [],
+    "minimum_karma" : 0,
+    "minimum_age" : 1
+  },
+
+  "self_submission_rules" : {
+    "banned_words_title" : ["Jeff"],
+    "banned_words_body" : ["Jeff"],
+    "banned_words" : [],
+    "minimum_karma" : 0,
+    "minimum_age" : 1
+  }
+}
+}
+}
